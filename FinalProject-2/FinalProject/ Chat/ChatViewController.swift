@@ -26,7 +26,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .AppBackground
         self.title = user2Name ?? "Chat"
         
         navigationItem.largeTitleDisplayMode = .never

@@ -120,7 +120,6 @@ class AddProductViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         title = "Add Product"
         setupScrollView()
         setupView()
@@ -178,6 +177,7 @@ class AddProductViewController: UIViewController {
     }
     
     private func setupView() {
+        
         UISegmentedControl.appearance()
             .setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 11, weight: .medium)], for: .normal)
         imageView.isUserInteractionEnabled = true
@@ -304,8 +304,6 @@ class AddProductViewController: UIViewController {
             subCategorySegmentedControl.setTitle("Kids & Education", forSegmentAt: 0)
             subCategorySegmentedControl.setTitle("Fiction", forSegmentAt: 1)
             subCategorySegmentedControl.setTitle("Science", forSegmentAt: 2)
-            
-            
             print("Books")
         default:
             break
@@ -314,7 +312,6 @@ class AddProductViewController: UIViewController {
     @objc private func subCategoryValueChanged(_ sender: UISegmentedControl) {
         subCategoryValue = subCategorySegmentedControl.titleForSegment(at: sender.selectedSegmentIndex)!
     }
-    
     
     private func setupImagePicker() {
         
@@ -365,9 +362,7 @@ class AddProductViewController: UIViewController {
     }
     
     private func saveToFireStore(advertismentTF: String, descriptionTextView: String, userId: String, url: URL?, uuid: UUID) {
-        
-        
-        
+
         let ref = db.collection("advertisement").document()
         ref.setData([
             "name": self.nameLabel.text!,
@@ -396,9 +391,6 @@ class AddProductViewController: UIViewController {
         }
     }
 }
-
-
-
 
 extension AddProductViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

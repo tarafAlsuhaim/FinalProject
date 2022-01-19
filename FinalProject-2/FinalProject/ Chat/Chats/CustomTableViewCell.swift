@@ -22,7 +22,7 @@ class CustomTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        imgUser.backgroundColor = UIColor.gray
+        imgUser.image = UIImage(named: "person-icon")
         imgUser.layer.cornerRadius = 23
         imgUser.clipsToBounds = true
         
@@ -35,6 +35,7 @@ class CustomTableViewCell: UITableViewCell {
         contentView.addSubview(labUerName)
         contentView.addSubview(labMessage)
         contentView.addSubview(labTime)
+        contentView.backgroundColor = .AppBackground
         
         let viewsDict = [
             "image" : imgUser,
@@ -44,13 +45,12 @@ class CustomTableViewCell: UITableViewCell {
         ] as [String : Any]
         
         NSLayoutConstraint.activate([
-            imgUser.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0),
-            imgUser.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            imgUser.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            imgUser.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             imgUser.trailingAnchor.constraint(equalTo: labUerName.leadingAnchor, constant: -8),
             imgUser.trailingAnchor.constraint(equalTo: labMessage.leadingAnchor, constant: -8),
-            
-            imgUser.heightAnchor.constraint(equalToConstant: 46),
-            imgUser.widthAnchor.constraint(equalToConstant: 46),
+            imgUser.heightAnchor.constraint(equalToConstant: 70),
+            imgUser.widthAnchor.constraint(equalToConstant: 70),
             
             labUerName.topAnchor.constraint(equalTo: imgUser.topAnchor, constant:0 ),
             labMessage.topAnchor.constraint(equalTo: labUerName.bottomAnchor, constant: 0),

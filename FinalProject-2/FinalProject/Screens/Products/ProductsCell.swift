@@ -24,12 +24,10 @@ class ProductsCell: UICollectionViewCell {
         addSubview(cardDescription)
         addSubview(cardNameOfSeller)
         configureCardLabel()
-        
         setImageConstraints()
         setLabelConstraints()
         configureProLabel()
         setProLabelConstraints()
-        
         configureImageView()
        
         
@@ -45,7 +43,6 @@ class ProductsCell: UICollectionViewCell {
         cardDescription.text = card.description
         cardImageView.image = image
         cardNameOfSeller.text = card.nameOfSeller
-        
         configureCell(.black)
     }
     
@@ -60,7 +57,7 @@ class ProductsCell: UICollectionViewCell {
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: 13).cgPath
         self.layer.cornerCurve  = .continuous
-        self.backgroundColor = .white
+        self.backgroundColor = .AppBackground
     }
     private func configureImageView(){
         

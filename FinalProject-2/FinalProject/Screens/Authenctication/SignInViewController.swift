@@ -12,7 +12,7 @@ class SignInViewController: UIViewController {
     
  //MARK: - image
     private let illustrationImage: UIImageView = {
-        $0.image = UIImage(named: "logo-1")
+        $0.image = UIImage(named: "logo")
         $0.contentMode = .scaleAspectFit
         $0.clipsToBounds = true
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -98,7 +98,7 @@ class SignInViewController: UIViewController {
     //MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .AppBackground
         setUpUlElement()
         setupConstraints()
     }
@@ -166,7 +166,6 @@ class SignInViewController: UIViewController {
         let nextVC = SignUpViewController()
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true, completion: nil)
-//        self.navigationController?.pushViewController(SignUpViewController(), animated: true)
     }
     //MARK: - Write db
     @objc private func signInTapped() {

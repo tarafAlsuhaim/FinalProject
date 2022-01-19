@@ -18,7 +18,7 @@ class ProductsDetailVC: UIViewController {
         let tb = UITableView(frame: .zero, style: .insetGrouped)
         tb.rowHeight = 55
         tb.register(ProductsDetailCell.self, forCellReuseIdentifier: ProductsDetailCell.id)
-        tb.backgroundColor = UIColor(#colorLiteral(red: 0.9591174722, green: 0.9726384282, blue: 1, alpha: 1))
+        tb.backgroundColor = .AppBackground
         tb.translatesAutoresizingMaskIntoConstraints = false
         return tb
     }()
@@ -62,16 +62,16 @@ class ProductsDetailVC: UIViewController {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
-    let com : UILabel = {
-        let lbl = UILabel()
-        lbl.text = "Comments"
-        lbl.backgroundColor = .clear
-        lbl.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 17, weight: .bold))
-        lbl.textColor = .label
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
+//    let com : UILabel = {
+//        let lbl = UILabel()
+//        lbl.text = "Comments"
+//        lbl.backgroundColor = .clear
+//        lbl.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 17, weight: .bold))
+//        lbl.textColor = .label
+//        lbl.translatesAutoresizingMaskIntoConstraints = false
+//        return lbl
+//    }()
+//
     let commentButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setupButton(with: "Commet")
@@ -89,7 +89,7 @@ class ProductsDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
-        view.backgroundColor = .white
+        view.backgroundColor = .AppBackground
         setupViews()
         populateViews()
         getComments()
@@ -103,7 +103,7 @@ class ProductsDetailVC: UIViewController {
         view.addSubview(nameLabel)
         view.addSubview(titleLabel)
         view.addSubview(descriptionLabel)
-        view.addSubview(com)
+//        view.addSubview(com)
         view.addSubview(commentButton)
         view.addSubview(chatButton)
         view.addSubview(tableView)
@@ -136,10 +136,10 @@ class ProductsDetailVC: UIViewController {
             commentButton.heightAnchor.constraint(equalToConstant: 35),
             commentButton.widthAnchor.constraint(equalToConstant: 115),
             
-            com.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 10),
-            com.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            com.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            
+//            com.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 10),
+//            com.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+//            com.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+//
             tableView.topAnchor.constraint(equalTo: commentButton.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),

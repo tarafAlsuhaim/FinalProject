@@ -112,29 +112,21 @@
 		047971BA27945679008E602F /*  Chat */ = {
 			isa = PBXGroup;
 			children = (
+				047971C627945A7B008E602F /* ChatViewController.swift */,
+				047971BB27945687008E602F /* Chat */,
 				047971C8279474CC008E602F /* Chats */,
-				047971C527945A4A008E602F /* Controller */,
-				047971BB27945687008E602F /* Model */,
 			);
 			path = " Chat";
 			sourceTree = "<group>";
 		};
-		047971BB27945687008E602F /* Model */ = {
+		047971BB27945687008E602F /* Chat */ = {
 			isa = PBXGroup;
 			children = (
 				047971BC27945695008E602F /* Chat.swift */,
 				047971BE279456AD008E602F /* ChatUser.swift */,
 				047971C0279456DE008E602F /* Message.swift */,
 			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		047971C527945A4A008E602F /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				047971C627945A7B008E602F /* ChatViewController.swift */,
-			);
-			path = Controller;
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		047971C8279474CC008E602F /* Chats */ = {

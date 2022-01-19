@@ -13,7 +13,6 @@ class ProfileViewController: UIViewController{
     private var products = [Product]()
     private let storage = Storage.storage()
     private let db = Firestore.firestore()
-    
     private let containerView = UIView()
     
     
@@ -75,7 +74,8 @@ class ProfileViewController: UIViewController{
     //MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .AppBackground
+        
         title = "Profile"
         
         
@@ -108,6 +108,7 @@ class ProfileViewController: UIViewController{
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(ProfileCell.self, forCellWithReuseIdentifier: ProfileCell.id)
         collectionView.register(ProfileSectionHeader.self, forSupplementaryViewOfKind: "SectionHeaderElementKind" , withReuseIdentifier: ProfileSectionHeader.reuseIdentifier)
+        collectionView.backgroundColor = .AppBackground
         view.addSubview(collectionView)
         
     }
@@ -315,8 +316,6 @@ extension ProfileViewController: UICollectionViewDelegate , UICollectionViewData
                 }else {
                     if snapshShot!.documents.isEmpty {
                         
-                        // Do something here if you want 🌚
-                        
                     }else{
                         for doc in snapshShot!.documents {
                             let data = doc.data()
@@ -346,7 +345,6 @@ extension ProfileViewController: UICollectionViewDelegate , UICollectionViewData
             
         }
     }
-    
     
     @objc func didTapEditButton() {
         let vc = UpdateProfileVC()

@@ -15,7 +15,7 @@ class ProductsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .AppBackground
         navigationItem.largeTitleDisplayMode = .always
         configureCollectionView()
     }
@@ -26,7 +26,7 @@ class ProductsVC: UIViewController {
     private func configureCollectionView(){
         collectionView                      = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height), collectionViewLayout: generateLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        collectionView.backgroundColor = UIColor(#colorLiteral(red: 0.9591174722, green: 0.9726384282, blue: 1, alpha: 1))
+        collectionView.backgroundColor = .AppBackground
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.showsVerticalScrollIndicator = true

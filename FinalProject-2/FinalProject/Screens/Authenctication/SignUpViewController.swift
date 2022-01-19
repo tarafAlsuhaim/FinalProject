@@ -13,7 +13,7 @@ class SignUpViewController: UIViewController {
 
     private let illustrationImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "logo-1")
+        image.image = UIImage(named: "logo")
         image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -120,7 +120,7 @@ class SignUpViewController: UIViewController {
     //MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .AppBackground
         setUpUlElement()
         setUpConstraints()
         createAccountTapped()

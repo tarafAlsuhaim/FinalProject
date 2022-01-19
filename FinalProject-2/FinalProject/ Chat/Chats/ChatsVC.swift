@@ -31,6 +31,7 @@ class ChatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         myTableView.dataSource = self
         myTableView.delegate = self
+        myTableView.backgroundColor = .AppBackground
         myTableView.rowHeight = UITableView.automaticDimension
         myTableView.estimatedRowHeight = 44
         
@@ -53,10 +54,7 @@ class ChatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     return
                 }
                 
-                if queryCount == 0 {
-                    //If documents count is zero that means there is no chat available and we need to create a new instance
-                    //                    self.createNewChat()
-                }
+                if queryCount == 0 {}
                 else if queryCount >= 1 {
                     self.chats.removeAll()
                     for doc in chatQuerySnap!.documents {
@@ -108,7 +106,6 @@ class ChatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         let vc = ChatViewController()
                         vc.user2UID = msg.senderID
                         vc.user2Name = msg.senderName
-                        //                            vc.user2ImgUrl = .imageURL
                         self.navigationController?.pushViewController(vc, animated: true)
                         return
                     }
@@ -117,7 +114,6 @@ class ChatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         let vc = ChatViewController()
                         vc.user2UID = msg.recvicerID
                         vc.user2Name = msg.recvicerName
-                        //                            vc.user2ImgUrl = products.imageURL
                         self.navigationController?.pushViewController(vc, animated: true)
                         return
                     }
@@ -135,7 +131,7 @@ class ChatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 100
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

@@ -12,17 +12,13 @@ class HomeViewController: UIViewController {
     
     
     let db = Firestore.firestore()
-    
     var productsArrayToPass = [Product]()
-    
     var collectionView: UICollectionView!
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
-        view.backgroundColor = .white
+        view.backgroundColor = .AppBackground
         configureCollectionView()
         
     }
@@ -54,11 +50,11 @@ class HomeViewController: UIViewController {
     }
     //MARK: - Setup collection view
     private func configureCollectionView(){
-        collectionView                      = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height), collectionViewLayout: generateLayout())
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height), collectionViewLayout: generateLayout())
         collectionView.autoresizingMask     = [.flexibleWidth, .flexibleHeight]
-        collectionView.backgroundColor      = UIColor(#colorLiteral(red: 0.9591174722, green: 0.9726384282, blue: 1, alpha: 1))
-        collectionView.delegate             = self
-        collectionView.dataSource           = self
+        collectionView.backgroundColor = .AppBackground
+        collectionView.delegate = self
+        collectionView.dataSource = self
         collectionView.showsVerticalScrollIndicator = false
         
         collectionView.register(HomeCellHeaderView.self,forSupplementaryViewOfKind: "clothes" ,withReuseIdentifier: "123")

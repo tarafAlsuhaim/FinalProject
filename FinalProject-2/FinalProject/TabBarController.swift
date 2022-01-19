@@ -10,7 +10,7 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .AppBackground
         
         viewControllers = [
             barItem(tabBarTitle: "Home", tabBarImage: UIImage(systemName: "house.fill")!.withTintColor(UIColor.iconTab, renderingMode: .alwaysOriginal), viewController: HomeViewController()),
