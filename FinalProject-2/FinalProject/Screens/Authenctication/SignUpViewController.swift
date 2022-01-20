@@ -98,6 +98,7 @@ class SignUpViewController: UIViewController {
     //MARK: - SignIn
     lazy var signIn: UIButton = {
         $0.setTitle("Sign in", for: .normal)
+        $0.setTitleColor(.colorGray, for: .normal)
         $0.backgroundColor = .clear
         $0.addTarget(self, action: #selector(signin), for: .touchDown)
         $0.translatesAutoresizingMaskIntoConstraints = false

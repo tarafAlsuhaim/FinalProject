@@ -114,7 +114,9 @@ class AddProductViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .AppBackground
+        if self.traitCollection.userInterfaceStyle == .dark {
+            view.backgroundColor = .systemGray6
+        }
         title = "Add Product"
         setupScrollView()
         setupView()
@@ -129,7 +131,7 @@ class AddProductViewController: UIViewController {
         scrollView.isScrollEnabled = true
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        
+        contentView.backgroundColor = .AppBackground
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
@@ -196,7 +198,7 @@ class AddProductViewController: UIViewController {
         self.subCategorySegmentedControl.selectedSegmentIndex = 0
         
         descriptionTV.delegate = self
-
+        
         scrollView.addSubview(imageTitle)
         scrollView.addSubview(imageView)
         scrollView.addSubview(nameTitleLabel)
@@ -357,7 +359,7 @@ class AddProductViewController: UIViewController {
     }
     
     private func saveToFireStore(advertismentTF: String, descriptionTextView: String, userId: String, url: URL?, uuid: UUID) {
-
+        
         let ref = db.collection("advertisement").document()
         ref.setData([
             "name": self.nameLabel.text!,
