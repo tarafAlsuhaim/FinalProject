@@ -18,7 +18,7 @@ class UpdateProfileVC: UIViewController {
     
     let imageTitle: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = UIColor.black.withAlphaComponent(0.57)
+        lbl.textColor = .colorGray
         lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "User Image"
@@ -39,7 +39,7 @@ class UpdateProfileVC: UIViewController {
     
     private let nameTitleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = UIColor.black.withAlphaComponent(0.57)
+        lbl.textColor = .colorGray
         lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Name"
@@ -56,7 +56,7 @@ class UpdateProfileVC: UIViewController {
     
     private let emailTitleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = UIColor.black.withAlphaComponent(0.57)
+        lbl.textColor = .colorGray
         lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Email"

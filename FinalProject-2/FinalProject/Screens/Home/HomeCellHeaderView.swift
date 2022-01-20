@@ -9,7 +9,7 @@ class HomeCellHeaderView: UICollectionReusableView {
     let headerLabel: UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-        lbl.textColor = UIColor.black.withAlphaComponent(0.5)
+        lbl.textColor = .colorGray
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()

@@ -20,7 +20,6 @@ class HomeViewController: UIViewController {
         title = "Home"
         view.backgroundColor = .AppBackground
         configureCollectionView()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -29,10 +28,8 @@ class HomeViewController: UIViewController {
         if !isUserIsSignedIn() {
             showSignupVC()
         }
-        
     }
     
-
     //MARK: - Check if user is already signed in
     private func isUserIsSignedIn() -> Bool {
         return Auth.auth().currentUser != nil

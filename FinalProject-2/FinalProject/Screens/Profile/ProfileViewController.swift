@@ -18,7 +18,7 @@ class ProfileViewController: UIViewController{
     
     private let nameLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .black
+        lbl.textColor = .colorGray
         lbl.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
@@ -26,7 +26,7 @@ class ProfileViewController: UIViewController{
     
     private let emailLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = UIColor.black.withAlphaComponent(0.57)
+        lbl.textColor = .colorGray
         lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
@@ -265,7 +265,6 @@ extension ProfileViewController: UICollectionViewDelegate , UICollectionViewData
             let product = self.products.remove(at: indexPath.row)
             self.collectionView.deleteItems(at: [indexPath])
             self.deleteData(for: product.docID)
-            
         }
         return cell
     }

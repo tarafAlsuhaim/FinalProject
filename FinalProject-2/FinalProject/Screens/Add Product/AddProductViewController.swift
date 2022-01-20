@@ -21,7 +21,7 @@ class AddProductViewController: UIViewController {
     
     let imageTitle: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = UIColor.black.withAlphaComponent(0.57)
+        lbl.textColor = .colorGray
         lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Product Image"
@@ -40,10 +40,9 @@ class AddProductViewController: UIViewController {
         return pI
     }()
     
-    
     private let nameTitleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = UIColor.black.withAlphaComponent(0.57)
+        lbl.textColor = .colorGray
         lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Your Name"
@@ -51,18 +50,16 @@ class AddProductViewController: UIViewController {
     }()
     
     private let nameLabel: UILabel = {
-        
         let lbl = UILabel()
-        lbl.textColor = UIColor.black.withAlphaComponent(0.57)
+        lbl.textColor = .colorGray
         lbl.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        
         return lbl
     }()
     
     private let advertismentTitleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = UIColor.black.withAlphaComponent(0.57)
+        lbl.textColor = .colorGray
         lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Product Name"
@@ -77,23 +74,20 @@ class AddProductViewController: UIViewController {
         return textField
     }()
     
-    
     private let descriptionTitleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = UIColor.black.withAlphaComponent(0.57)
+        lbl.textColor = .colorGray
         lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Product Description"
         return lbl
     }()
     
-    
     private let descriptionTV: UITextView = {
         let tf = UITextView()
         tf.setupTextView()
         return tf
     }()
-    
     
     private let addButton: UIButton = {
         let btn = UIButton(type: .system)
@@ -103,7 +97,7 @@ class AddProductViewController: UIViewController {
     
     private let categoryTitleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = UIColor.black.withAlphaComponent(0.57)
+        lbl.textColor = .colorGray
         lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Select a Category"
@@ -111,7 +105,7 @@ class AddProductViewController: UIViewController {
     }()
     private let subCategoryTitleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = UIColor.black.withAlphaComponent(0.57)
+        lbl.textColor = .colorGray
         lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Select a Sub Category"
@@ -120,6 +114,7 @@ class AddProductViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .AppBackground
         title = "Add Product"
         setupScrollView()
         setupView()
@@ -407,7 +402,6 @@ extension AddProductViewController: UIImagePickerControllerDelegate, UINavigatio
         guard let userPickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {return}
         imageView.image = userPickedImage
         self.userPickedImage = userPickedImage
-        
         picker.dismiss(animated: true, completion: nil)
     }
 }

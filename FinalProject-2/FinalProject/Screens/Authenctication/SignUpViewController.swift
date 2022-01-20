@@ -35,7 +35,6 @@ class SignUpViewController: UIViewController {
     lazy var name: UILabel = {
         $0.text = "Name"
         $0.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        $0.textColor = .black
         $0.textAlignment = .left
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
@@ -53,7 +52,6 @@ class SignUpViewController: UIViewController {
     lazy var email: UILabel = {
         $0.text = "Email"
         $0.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        $0.textColor = .black
         $0.textAlignment = .left
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
@@ -71,7 +69,6 @@ class SignUpViewController: UIViewController {
     lazy var password: UILabel = {
         $0.text = "Password"
         $0.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        $0.textColor = .black
         $0.textAlignment = .left
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
@@ -101,7 +98,6 @@ class SignUpViewController: UIViewController {
     //MARK: - SignIn
     lazy var signIn: UIButton = {
         $0.setTitle("Sign in", for: .normal)
-        $0.setTitleColor(.black, for: .normal)
         $0.backgroundColor = .clear
         $0.addTarget(self, action: #selector(signin), for: .touchDown)
         $0.translatesAutoresizingMaskIntoConstraints = false

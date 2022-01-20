@@ -13,7 +13,7 @@ class ProfileSectionHeader: UICollectionReusableView {
     
     private let label: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = UIColor.black.withAlphaComponent(0.57)
+        lbl.textColor = .colorGray
         lbl.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Your Advertisements"
